@@ -1,0 +1,12 @@
+C:\Users\joeym\source\repos\LoanCalc_GUI\LoanCalc_GUI\bin\Debug\LoanCalc_GUI.exe.config
+C:\Users\joeym\source\repos\LoanCalc_GUI\LoanCalc_GUI\bin\Debug\LoanCalc_GUI.exe
+C:\Users\joeym\source\repos\LoanCalc_GUI\LoanCalc_GUI\bin\Debug\LoanCalc_GUI.pdb
+C:\Users\joeym\source\repos\LoanCalc_GUI\LoanCalc_GUI\obj\Debug\LoanCalc_GUI.existingLoan.resources
+C:\Users\joeym\source\repos\LoanCalc_GUI\LoanCalc_GUI\obj\Debug\LoanCalc_GUI.Form1.resources
+C:\Users\joeym\source\repos\LoanCalc_GUI\LoanCalc_GUI\obj\Debug\LoanCalc_GUI.newLoan.resources
+C:\Users\joeym\source\repos\LoanCalc_GUI\LoanCalc_GUI\obj\Debug\LoanCalc_GUI.Properties.Resources.resources
+C:\Users\joeym\source\repos\LoanCalc_GUI\LoanCalc_GUI\obj\Debug\LoanCalc_GUI.csproj.GenerateResource.Cache
+C:\Users\joeym\source\repos\LoanCalc_GUI\LoanCalc_GUI\obj\Debug\LoanCalc_GUI.csproj.CoreCompileInputs.cache
+C:\Users\joeym\source\repos\LoanCalc_GUI\LoanCalc_GUI\obj\Debug\LoanCalc_GUI.exe
+C:\Users\joeym\source\repos\LoanCalc_GUI\LoanCalc_GUI\obj\Debug\LoanCalc_GUI.pdb
+C:\Users\joeym\source\repos\LoanCalc_GUI\LoanCalc_GUI\obj\Debug\LoanCalc_GUI.csprojResolveAssemblyReference.cache
