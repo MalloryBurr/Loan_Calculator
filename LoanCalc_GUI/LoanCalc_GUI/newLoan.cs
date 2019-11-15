@@ -16,5 +16,13 @@ namespace LoanCalc_GUI
         {
             InitializeComponent();
         }
+
+        private void uniInfoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.uniInfoBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.loanCalcDBDataSet);
+
+        }
     }
 }
