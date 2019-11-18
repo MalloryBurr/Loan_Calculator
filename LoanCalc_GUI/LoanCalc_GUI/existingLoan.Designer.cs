@@ -130,7 +130,7 @@ namespace LoanCalc_GUI
             // 
             this.Calculate.Location = new System.Drawing.Point(83, 245);
             this.Calculate.Name = "Calculate";
-            this.Calculate.Size = new System.Drawing.Size(75, 23);
+            this.Calculate.Size = new System.Drawing.Size(86, 23);
             this.Calculate.TabIndex = 9;
             this.Calculate.Text = "Calculate";
             this.Calculate.UseVisualStyleBackColor = true;
