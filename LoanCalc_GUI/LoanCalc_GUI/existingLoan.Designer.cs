@@ -187,13 +187,14 @@ namespace LoanCalc_GUI
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::LoanCalc_GUI.Properties.Resources.StudentLoans1;
+            // image isnt being put in correctly
+            /*this.pictureBox2.Image = global::LoanCalc_GUI.Properties.Resources.StudentLoans1;
             this.pictureBox2.Location = new System.Drawing.Point(432, 113);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(522, 295);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
+            this.pictureBox2.TabStop = false;*/
             // 
             // existingLoan
             // 
