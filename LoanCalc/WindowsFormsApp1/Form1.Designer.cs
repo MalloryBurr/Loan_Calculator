@@ -44,10 +44,10 @@
             // newLoanButton
             // 
             this.newLoanButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newLoanButton.Location = new System.Drawing.Point(85, 190);
-            this.newLoanButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.newLoanButton.Location = new System.Drawing.Point(113, 234);
+            this.newLoanButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.newLoanButton.Name = "newLoanButton";
-            this.newLoanButton.Size = new System.Drawing.Size(186, 93);
+            this.newLoanButton.Size = new System.Drawing.Size(248, 114);
             this.newLoanButton.TabIndex = 0;
             this.newLoanButton.Text = "New Loan";
             this.newLoanButton.UseVisualStyleBackColor = true;
@@ -77,10 +77,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 40);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(27, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(613, 39);
+            this.label1.Size = new System.Drawing.Size(756, 51);
             this.label1.TabIndex = 1;
             this.label1.Text = "Welcome to the Loan Calculator App";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -89,20 +88,19 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(80, 115);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(107, 142);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(476, 26);
+            this.label2.Size = new System.Drawing.Size(617, 32);
             this.label2.TabIndex = 2;
             this.label2.Text = "Select which type of loan you\'d like to work with:";
             // 
             // existingLoanButton
             // 
             this.existingLoanButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.existingLoanButton.Location = new System.Drawing.Point(350, 190);
-            this.existingLoanButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.existingLoanButton.Location = new System.Drawing.Point(467, 234);
+            this.existingLoanButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.existingLoanButton.Name = "existingLoanButton";
-            this.existingLoanButton.Size = new System.Drawing.Size(186, 93);
+            this.existingLoanButton.Size = new System.Drawing.Size(248, 114);
             this.existingLoanButton.TabIndex = 3;
             this.existingLoanButton.Text = "Existing Loan";
             this.existingLoanButton.UseVisualStyleBackColor = true;
@@ -110,14 +108,14 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 361);
+            this.ClientSize = new System.Drawing.Size(872, 444);
             this.Controls.Add(this.existingLoanButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.newLoanButton);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Loan Calculator";
