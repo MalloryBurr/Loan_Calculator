@@ -85,6 +85,7 @@
             this.btnClear.TabIndex = 12;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // txtPrincipal
             // 
@@ -119,6 +120,7 @@
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(100, 22);
             this.txtAmount.TabIndex = 3;
+            this.txtAmount.TextChanged += new System.EventHandler(this.txtAmount_TextChanged);
             // 
             // lblExisting
             // 
@@ -178,6 +180,7 @@
             this.txtMonths.Name = "txtMonths";
             this.txtMonths.Size = new System.Drawing.Size(100, 22);
             this.txtMonths.TabIndex = 7;
+            this.txtMonths.TextChanged += new System.EventHandler(this.txtMonths_TextChanged);
             // 
             // ExistingLoan
             // 
