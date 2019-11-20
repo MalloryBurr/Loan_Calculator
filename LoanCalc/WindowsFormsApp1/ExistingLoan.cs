@@ -17,20 +17,6 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void existingLoan_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void Calculate_Click(object sender, EventArgs e)
         {
@@ -64,13 +50,26 @@ namespace WindowsFormsApp1
             monthlyPayment = (existingAmount) * (interestRate / 1200) / amount;
             return (monthlyPayment);
         }
-
-        private void label2_Click(object sender, EventArgs e)
+        
+        private void txtAmount_TextChanged(object sender, EventArgs e)
         {
-
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtAmount.Text, "[^0-9]"))
+            {
+                MessageBox.Show("This area is reserved for numbers only, please input a number 0-9.");
+                txtAmount.Text = txtAmount.Text.Remove(txtAmount.Text.Length - 1);
+            }
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void txtMonths_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtMonths.Text, "[^0-9]"))
+            {
+                MessageBox.Show("This area is reserved for numbers only, please input a number 0-9.");
+                txtMonths.Text = txtMonths.Text.Remove(txtMonths.Text.Length - 1);
+            }
+        }
+
+        private void btnClear_Click1(object sender, EventArgs e)
         {
             txtAmount.Clear();
             txtEstimatedPayment.Clear();
