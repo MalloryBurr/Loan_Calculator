@@ -16,11 +16,14 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+        //to be used in calculate click and sent through payment options
+        private double amount = 0;
+        private double interest = 0;
 
         private void Calculate_Click(object sender, EventArgs e)
         {
-            double amount = Convert.ToDouble(txtAmount.Text);
-            double interest = Convert.ToDouble(txtInterestRate.Text);
+            amount = Convert.ToDouble(txtAmount.Text);
+            interest = Convert.ToDouble(txtInterestRate.Text);
             double time = Convert.ToDouble(txtMonths.Text);
             double final = monthlyPayment(amount, time, interest);
             string monthly = final.ToString("f2");
@@ -80,6 +83,12 @@ namespace WindowsFormsApp1
                 MessageBox.Show("This area is reserved for numbers only, please input a number 0-9.");
                 txtAmount.Text = txtAmount.Text.Remove(txtAmount.Text.Length - 1);
             }
+        }
+
+        private void paymentOptions_Click(object sender, EventArgs e)
+        {
+            PayOptions pay = new PayOptions(amount, interest);
+            pay.ShowDialog();
         }
     }
 }

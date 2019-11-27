@@ -85,6 +85,12 @@
     <Compile Include="NewLoan.Designer.cs">
       <DependentUpon>NewLoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="PayOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayOptions.Designer.cs">
+      <DependentUpon>PayOptions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ExistingLoan.resx">
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewLoan.resx">
       <DependentUpon>NewLoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayOptions.resx">
+      <DependentUpon>PayOptions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
