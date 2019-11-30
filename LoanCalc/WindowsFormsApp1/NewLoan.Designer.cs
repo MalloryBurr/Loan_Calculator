@@ -54,6 +54,7 @@
             this.uniName = new System.Windows.Forms.TextBox();
             this.monthlyPaymentsLabel = new System.Windows.Forms.Label();
             this.textMonthlyPayments = new System.Windows.Forms.TextBox();
+            this.textPaymentOptions = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.loanCalcDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.universityInfoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.universityInfoDataGridView)).BeginInit();
@@ -275,11 +276,22 @@
             this.textMonthlyPayments.Size = new System.Drawing.Size(176, 38);
             this.textMonthlyPayments.TabIndex = 50;
             // 
+            // textPaymentOptions
+            // 
+            this.textPaymentOptions.Location = new System.Drawing.Point(190, 760);
+            this.textPaymentOptions.Name = "textPaymentOptions";
+            this.textPaymentOptions.Size = new System.Drawing.Size(316, 53);
+            this.textPaymentOptions.TabIndex = 51;
+            this.textPaymentOptions.Text = "Payment Options";
+            this.textPaymentOptions.UseVisualStyleBackColor = true;
+            this.textPaymentOptions.Click += new System.EventHandler(this.textPaymentOptions_Click);
+            // 
             // NewLoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1744, 860);
+            this.Controls.Add(this.textPaymentOptions);
             this.Controls.Add(this.textMonthlyPayments);
             this.Controls.Add(this.monthlyPaymentsLabel);
             this.Controls.Add(this.button1);
@@ -337,5 +349,6 @@
         private System.Windows.Forms.TextBox uniName;
         private System.Windows.Forms.Label monthlyPaymentsLabel;
         private System.Windows.Forms.TextBox textMonthlyPayments;
+        private System.Windows.Forms.Button textPaymentOptions;
     }
 }

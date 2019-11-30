@@ -32,15 +32,20 @@ namespace WindowsFormsApp1
 
         private static readonly int numberOfYears;
 
+        private double amountOwed;
+        private double interest;
 
         private void button1_Click(object sender, EventArgs e)
         {
             string universityName = Convert.ToString(uniName.Text);
             double numberOfCreditHours = Convert.ToDouble(textBox2.Text);
             double costperch = Convert.ToDouble(textBox3.Text);
-            double interest = Convert.ToDouble(textBox4.Text);
+            interest = Convert.ToDouble(textBox4.Text);
             double duration = Convert.ToDouble(textBox6.Text);
-            //what is new amount supposed to be used for? -JM
+
+            amountOwed = numberOfCreditHours * costperch;
+            
+                //what is new amount supposed to be used for? -JM
             double newamount = 0;
             //commented out this because it sends the wrong parameters-JM
             // double final = monthlypayrate(costperch, duration, interest, newamount);
@@ -64,6 +69,11 @@ namespace WindowsFormsApp1
             return (paymentAmount);
         }
 
+        private void textPaymentOptions_Click(object sender, EventArgs e)
+        {
+            PayOptions pay = new PayOptions(amountOwed, interest);
+            pay.ShowDialog();
+        }
 
         private void label9_Click(object sender, EventArgs e)
         {
@@ -110,5 +120,7 @@ namespace WindowsFormsApp1
         {
 
         }
+
+       
     }
 }
