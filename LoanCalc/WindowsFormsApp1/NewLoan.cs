@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
         private void NewLoan_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'loanCalcDatabaseDataSet.UniversityInfo' table. You can move, or remove it, as needed.
-            this.universityInfoTableAdapter.Fill(this.loanCalcDatabaseDataSet.UniversityInfo);
+            //this.universityInfoTableAdapter.Fill(this.loanCalcDatabaseDataSet.UniversityInfo);
         }
 
         private static readonly int numberOfYears;
@@ -35,24 +35,34 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _ = Convert.ToString(uniName.Text);
-            _ = Convert.ToDouble(textBox2.Text);
+            string universityName = Convert.ToString(uniName.Text);
+            double numberOfCreditHours = Convert.ToDouble(textBox2.Text);
             double costperch = Convert.ToDouble(textBox3.Text);
             double interest = Convert.ToDouble(textBox4.Text);
             double duration = Convert.ToDouble(textBox6.Text);
+            //what is new amount supposed to be used for? -JM
             double newamount = 0;
-            double final = monthlypayrate(costperch, duration, interest, newamount);
-
-
-
-
-
-
-
+            //commented out this because it sends the wrong parameters-JM
+            // double final = monthlypayrate(costperch, duration, interest, newamount);
+            textMonthlyPayments.Text = monthlypayrate(costperch, duration, interest, numberOfCreditHours).ToString("f2");
+            double final = (monthlypayrate(costperch, duration, interest, numberOfCreditHours) *(duration*12));
+            textBox5.Text = final.ToString("f2");
 
         }
 
-
+        public static double monthlypayrate(double costPerCh, double duration, double interest, double numberOfCH)
+        {
+            double loanAmount;
+            double credithours = numberOfCH;
+            double costpercredithours = costPerCh;
+            loanAmount = credithours * costpercredithours;
+            double rateOfInterest = interest / 1200;
+            //changed from numberOfYears to duration. number of years is never set to anything so is always 0 and is not needed 
+            // because duration already exists-JM
+            double numberOfPayments = duration * 12;
+            double paymentAmount = (rateOfInterest * loanAmount) / (1 - Math.Pow(1 + rateOfInterest, numberOfPayments * -1));
+            return (paymentAmount);
+        }
 
 
         private void label9_Click(object sender, EventArgs e)
@@ -85,20 +95,6 @@ namespace WindowsFormsApp1
 
         }
 
-        public static double monthlypayrate(double newamount, double duration, double intrate, double interest)
-        {
-
-
-            double loanAmount;
-            double credithours = 0.0;
-            double costpercredithours = 0.0;
-            loanAmount = credithours * costpercredithours;
-            double rateOfInterest = intrate / 1200;
-            double numberOfPayments = numberOfYears * 12;
-            double paymentAmount = (rateOfInterest * loanAmount) / (1 - Math.Pow(1 + rateOfInterest, numberOfPayments * -1));
-
-            return (paymentAmount);
-        }
 
         private void uniName_TextChanged(object sender, EventArgs e)
         {

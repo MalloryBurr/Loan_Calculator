@@ -136,3 +136,4 @@ C:\Users\joeym\Desktop\loan\Loan_Calculator\LoanCalc\WindowsFormsApp1\obj\Debug\
 C:\Users\joeym\Desktop\loan\Loan_Calculator\LoanCalc\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\joeym\Desktop\loan\Loan_Calculator\LoanCalc\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\joeym\Desktop\loan\Loan_Calculator\LoanCalc\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.PayOptions.resources
+C:\Users\joeym\Desktop\loan\Loan_Calculator\LoanCalc\WindowsFormsApp1\obj\Debug\LoanCalculator.csprojResolveAssemblyReference.cache

@@ -28,7 +28,7 @@ namespace WindowsFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'loanCalcDatabaseDataSet.UniversityInfo' table. You can move, or remove it, as needed.
-            this.universityInfoTableAdapter.Fill(this.loanCalcDatabaseDataSet.UniversityInfo);
+            //this.universityInfoTableAdapter.Fill(this.loanCalcDatabaseDataSet.UniversityInfo);
 
         }
 
