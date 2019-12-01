@@ -88,7 +88,7 @@ namespace WindowsFormsApp1
             txtMonths.Clear();
             txtPrincipal.Clear();
             txtInterestOnly.Clear();
-            lstPayments.ResetText();
+            lstPayments.Items.Clear();
         }
 
         private void ExistingLoan_Load(object sender, EventArgs e)
