@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
         {
             amount = Convert.ToDouble(txtAmount.Text);
             interest = Convert.ToDouble(txtInterestRate.Text);
-            double time = Convert.ToDouble(txtMonths.Text);           
+            double time = Convert.ToDouble(txtMonths.Text);
             double final = monthlyPayment(amount, time, interest);
             string monthly = final.ToString("f2");
             txtEstimatedPayment.Text = monthly;
@@ -45,11 +45,25 @@ namespace WindowsFormsApp1
             double balance = principalRemaining;
             for (int i = 1; i <= p3; i++)
             {
-                balance = (balance)-(principalPayment);
-                lstPayments.Items.Add("Month " + " \t " + i.ToString() + " \t " +  balance.ToString("C")); //display each value of list with currency, loop
+                balance = (balance) - (principalPayment);
+                lstPayments.Items.Add("Month " + " \t " + i.ToString() + " \t " + balance.ToString("C")); //display each value of list with currency, loop
             }
-             
+                       
+            chart1.Series["Undergraduate Subsidized & Unsubsidized"].Points.Add(4.45);
+            chart1.Series["Undergraduate Subsidized & Unsubsidized"].Points[0].LegendText = "Undergraduate Subsidized & Unsubsidized";
+            chart1.Series["Undergraduate Subsidized & Unsubsidized"].Points[0].Label = "4.45%";
 
+            chart1.Series["Graduate Subsidized & Unsubsidized"].Points.Add(6.08);
+            chart1.Series["Graduate Subsidized & Unsubsidized"].Points[0].LegendText = "Graduate Subsidized & Unsubsidized";
+            chart1.Series["Graduate Subsidized & Unsubsidized"].Points[0].Label = "6.08%";
+
+            chart1.Series["Parent Plus"].Points.Add(7.08);
+            chart1.Series["Parent Plus"].Points[0].LegendText = "Parent Plus";
+            chart1.Series["Parent Plus"].Points[0].Label = "7.08%";
+
+            chart1.Series["Yours"].Points.Add(interest);
+            chart1.Series["Yours"].Points[0].LegendText = "Yours";
+            //chart1.Series["Yours"].Points[0].Label = interest +"%";
         }
 
         public static double InterestOnly (double initialAmount, double finalInterest)
@@ -89,6 +103,7 @@ namespace WindowsFormsApp1
             txtPrincipal.Clear();
             txtInterestOnly.Clear();
             lstPayments.Items.Clear();
+            
         }
 
         private void ExistingLoan_Load(object sender, EventArgs e)
@@ -118,6 +133,11 @@ namespace WindowsFormsApp1
         {
             PayOptions pay = new PayOptions(amount, interest);
             pay.ShowDialog();
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
