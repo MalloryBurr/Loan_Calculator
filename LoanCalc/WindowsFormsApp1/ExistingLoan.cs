@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,27 +16,71 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+        //to be used in calculate click and sent through payment options
+        private double amount = 0;
+        private double interest = 0;
 
         private void Calculate_Click(object sender, EventArgs e)
         {
-            double amount = Convert.ToDouble(txtAmount.Text);
-            double interest = Convert.ToDouble(txtInterestRate.Text);
+            amount = Convert.ToDouble(txtAmount.Text);
+            interest = Convert.ToDouble(txtInterestRate.Text);
             double time = Convert.ToDouble(txtMonths.Text);
             double final = monthlyPayment(amount, time, interest);
             string monthly = final.ToString("f2");
             txtEstimatedPayment.Text = monthly;
-
+            //displays monthly payment through principal with interest function
             double estimatedpayment = Convert.ToDouble(txtEstimatedPayment.Text);
             double principal = principalWithInterest(estimatedpayment, time);
             string principalpayment = principal.ToString("f2");
             txtPrincipal.Text = principalpayment;
+            double principalwithinterest = Convert.ToDouble(txtPrincipal.Text);
+            double interestOnly = InterestOnly(principalwithinterest, amount);
+            string interestValueOnly = interestOnly.ToString("C"); //currency
+            txtInterestOnly.Text = interestValueOnly;
+            //lists payments from initial payment month to end payment month
+            lstPayments.Items.Clear();
+            double principalRemaining = double.Parse(txtPrincipal.Text);
+            double principalPayment = double.Parse(txtEstimatedPayment.Text);
+            int p3 = int.Parse(txtMonths.Text);
+            double balance = principalRemaining;
+            for (int i = 1; i <= p3; i++)
+            {
+                balance = (balance) - (principalPayment);
+                lstPayments.Items.Add("Month " + " \t " + i.ToString() + " \t " + balance.ToString("C")); //display each value of list with currency, loop
+            }
+                       
+            chart1.Series["Undergraduate Subsidized & Unsubsidized"].Points.Add(4.45);
+            chart1.Series["Undergraduate Subsidized & Unsubsidized"].Points[0].LegendText = "Undergraduate Subsidized & Unsubsidized";
+            chart1.Series["Undergraduate Subsidized & Unsubsidized"].Points[0].Label = "4.45%";
+
+            chart1.Series["Graduate Subsidized & Unsubsidized"].Points.Add(6.08);
+            chart1.Series["Graduate Subsidized & Unsubsidized"].Points[0].LegendText = "Graduate Subsidized & Unsubsidized";
+            chart1.Series["Graduate Subsidized & Unsubsidized"].Points[0].Label = "6.08%";
+
+            chart1.Series["Parent Plus"].Points.Add(7.08);
+            chart1.Series["Parent Plus"].Points[0].LegendText = "Parent Plus";
+            chart1.Series["Parent Plus"].Points[0].Label = "7.08%";
+
+            chart1.Series["Yours"].Points.Add(interest);
+            chart1.Series["Yours"].Points[0].LegendText = "Yours";
+            //chart1.Series["Yours"].Points[0].Label = interest +"%";
         }
+
+        public static double InterestOnly (double initialAmount, double finalInterest)
+        {
+            double interestOnlyValue;
+            interestOnlyValue = initialAmount - finalInterest;
+            return (interestOnlyValue);
+
+        }
+
         public static double principalWithInterest(double monthlyValue, double loanDuration)
         {
             double Total;
             Total = (monthlyValue) * (loanDuration);
             return (Total);
         }
+
         public static double monthlyPayment(double existingAmount, double remainingMonths, double interestRate)
         {
             double rate, months, amount;
@@ -57,6 +101,9 @@ namespace WindowsFormsApp1
             txtInterestRate.Clear();
             txtMonths.Clear();
             txtPrincipal.Clear();
+            txtInterestOnly.Clear();
+            lstPayments.Items.Clear();
+            
         }
 
         private void ExistingLoan_Load(object sender, EventArgs e)
@@ -80,6 +127,17 @@ namespace WindowsFormsApp1
                 MessageBox.Show("This area is reserved for numbers only, please input a number 0-9.");
                 txtAmount.Text = txtAmount.Text.Remove(txtAmount.Text.Length - 1);
             }
+        }
+
+        private void paymentOptions_Click(object sender, EventArgs e)
+        {
+            PayOptions pay = new PayOptions(amount, interest);
+            pay.ShowDialog();
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
