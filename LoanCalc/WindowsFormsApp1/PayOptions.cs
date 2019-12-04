@@ -15,18 +15,22 @@ namespace WindowsFormsApp1
         public PayOptions()
         {
             InitializeComponent();
-            
         }
 
+        //inherits total_payment and interest_rate from newloan or existing loan
         public PayOptions(double total_Payment, double interest_Rate)
         {
             InitializeComponent();
             displayPaymentOptions(total_Payment, interest_Rate);
-
         }
 
+        //define global variables to allow passing to other functions
         double totalOwed;
         double fiveYear, tenYear, fifteenYear, twentyYear;
+        DateTime date;
+        private string selectedTime;
+
+
         //displays a list of payment time schedules
         public void displayPaymentOptions(double payment, double i_rate)
         {
@@ -69,17 +73,19 @@ namespace WindowsFormsApp1
             return (monthlyPayment);
         }
 
-        DateTime date;
-
+        //create variable for date to save the selected date on the calendar
         private void monthCalendar1_DateChanged_1(object sender, DateRangeEventArgs e)
         {
             date = monthCalendar1.SelectionRange.Start;
         }
 
+        
+
         private void PayOptions_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'loanCalcDatabaseDataSet.UniversityInfo' table. You can move, or remove it, as needed.
             this.universityInfoTableAdapter.Fill(this.loanCalcDatabaseDataSet.UniversityInfo);
+
+            //insert values into duration combobox
             durationCB.Items.Add("5");
             durationCB.Items.Add("10");
             durationCB.Items.Add("15");
@@ -88,6 +94,7 @@ namespace WindowsFormsApp1
 
         private void durationCB_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //create switch to route logic based on duration selected
             switch (durationCB.SelectedItem.ToString())
             {
                 case "5":
@@ -105,10 +112,9 @@ namespace WindowsFormsApp1
             }
         }
 
-        private string selectedTime;
-
-        private void button1_Click(object sender, EventArgs e)
+        private void scheduleButton_Click_1(object sender, EventArgs e)
         {
+            //call schedule method to display calendar of payments
             selectedTime = durationCB.SelectedItem.ToString();
             Schedule sc = new Schedule(selectedTime, totalOwed, date);
             sc.ShowDialog();

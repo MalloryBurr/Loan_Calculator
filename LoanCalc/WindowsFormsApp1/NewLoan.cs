@@ -30,31 +30,30 @@ namespace WindowsFormsApp1
             this.universityInfoTableAdapter.Fill(this.loanCalcDatabaseDataSet.UniversityInfo);
         }
 
-        private static readonly int numberOfYears;
-
+        //create global values to pass through methods
         private double amountOwed;
         private double interest;
 
-        private void button1_Click(object sender, EventArgs e)
+        private void calcButton_Click(object sender, EventArgs e)
         {
+
             string universityName = Convert.ToString(uniName.Text);
             double numberOfCreditHours = Convert.ToDouble(textBox2.Text);
             double costperch = Convert.ToDouble(textBox3.Text);
             interest = Convert.ToDouble(textBox4.Text);
             double duration = Convert.ToDouble(textBox6.Text);
 
+            //calculate amount owed on loan
             amountOwed = numberOfCreditHours * costperch;
             
-                //what is new amount supposed to be used for? -JM
-            double newamount = 0;
-            //commented out this because it sends the wrong parameters-JM
-            // double final = monthlypayrate(costperch, duration, interest, newamount);
+            //assign values and calculate final
             textMonthlyPayments.Text = monthlypayrate(costperch, duration, interest, numberOfCreditHours).ToString("f2");
             double final = (monthlypayrate(costperch, duration, interest, numberOfCreditHours) *(duration*12));
             textBox5.Text = final.ToString("f2");
 
         }
 
+        //calculate monthly payments and assign to variables
         public static double monthlypayrate(double costPerCh, double duration, double interest, double numberOfCH)
         {
             double loanAmount;
@@ -62,8 +61,6 @@ namespace WindowsFormsApp1
             double costpercredithours = costPerCh;
             loanAmount = credithours * costpercredithours;
             double rateOfInterest = interest / 1200;
-            //changed from numberOfYears to duration. number of years is never set to anything so is always 0 and is not needed 
-            // because duration already exists-JM
             double numberOfPayments = duration * 12;
             double paymentAmount = (rateOfInterest * loanAmount) / (1 - Math.Pow(1 + rateOfInterest, numberOfPayments * -1));
             return (paymentAmount);
@@ -71,6 +68,7 @@ namespace WindowsFormsApp1
 
         private void textPaymentOptions_Click(object sender, EventArgs e)
         {
+            //call Pay Options and display window
             PayOptions pay = new PayOptions(amountOwed, interest);
             pay.ShowDialog();
         }
