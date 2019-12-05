@@ -22,6 +22,7 @@ namespace WindowsFormsApp1
 
         private void Calculate_Click(object sender, EventArgs e)
         {
+            //create variables for the textbox that is converted to double, takes information from monthlyPayment function
             amount = Convert.ToDouble(txtAmount.Text);
             interest = Convert.ToDouble(txtInterestRate.Text);
             double time = Convert.ToDouble(txtMonths.Text);
@@ -31,10 +32,11 @@ namespace WindowsFormsApp1
             //displays monthly payment through principal with interest function
             double estimatedpayment = Convert.ToDouble(txtEstimatedPayment.Text);
             double principal = principalWithInterest(estimatedpayment, time);
-            string principalpayment = principal.ToString("f2");
+            string principalpayment = principal.ToString("f2"); //converted to 2 decimal places
             txtPrincipal.Text = principalpayment;
             double principalwithinterest = Convert.ToDouble(txtPrincipal.Text);
-            double interestOnly = InterestOnly(principalwithinterest, amount);
+            // call InterestOnly function to receive the interest value
+            double interestOnly = InterestOnly(principalwithinterest, amount); 
             string interestValueOnly = interestOnly.ToString("C"); //currency
             txtInterestOnly.Text = interestValueOnly;
             //lists payments from initial payment month to end payment month
@@ -43,29 +45,35 @@ namespace WindowsFormsApp1
             double principalPayment = double.Parse(txtEstimatedPayment.Text);
             int p3 = int.Parse(txtMonths.Text);
             double balance = principalRemaining;
+            //for loop to read from 1 to the end of payment month and decrement the estimated monthly payment
             for (int i = 1; i <= p3; i++)
             {
                 balance = (balance) - (principalPayment);
-                lstPayments.Items.Add("Month " + " \t " + i.ToString() + " \t " + balance.ToString("C")); //display each value of list with currency, loop
+                 //display each value of list with currency, loop
+                lstPayments.Items.Add("Month " + " \t " + i.ToString() + " \t " + balance.ToString("C"));
             }
-                       
+            
+            //static values for chart with label and legend description
             chart1.Series["Undergraduate Subsidized & Unsubsidized"].Points.Add(4.45);
             chart1.Series["Undergraduate Subsidized & Unsubsidized"].Points[0].LegendText = "Undergraduate Subsidized & Unsubsidized";
             chart1.Series["Undergraduate Subsidized & Unsubsidized"].Points[0].Label = "4.45%";
-
+            
+            //static valeus for chart with label and legend description
             chart1.Series["Graduate Subsidized & Unsubsidized"].Points.Add(6.08);
             chart1.Series["Graduate Subsidized & Unsubsidized"].Points[0].LegendText = "Graduate Subsidized & Unsubsidized";
             chart1.Series["Graduate Subsidized & Unsubsidized"].Points[0].Label = "6.08%";
 
+            //static values for chart with label and legend description
             chart1.Series["Parent Plus"].Points.Add(7.08);
             chart1.Series["Parent Plus"].Points[0].LegendText = "Parent Plus";
             chart1.Series["Parent Plus"].Points[0].Label = "7.08%";
-
+            
+            //value of interest that is inputted is put in the placeholder for graph
             chart1.Series["Yours"].Points.Add(interest);
             chart1.Series["Yours"].Points[0].LegendText = "Yours";
-            //chart1.Series["Yours"].Points[0].Label = interest +"%";
+            
         }
-
+        // function to get the interest, total payment with interest - initial loan amount
         public static double InterestOnly (double initialAmount, double finalInterest)
         {
             double interestOnlyValue;
@@ -73,14 +81,14 @@ namespace WindowsFormsApp1
             return (interestOnlyValue);
 
         }
-
+        // function to calculate total value of principal with ineterest, multiplies monthly payment by duration in months
         public static double principalWithInterest(double monthlyValue, double loanDuration)
         {
             double Total;
             Total = (monthlyValue) * (loanDuration);
             return (Total);
         }
-
+        //monthly payment function of compounded interest of a value given that the interest is a whole value (ie. 8 = 8% not .08)
         public static double monthlyPayment(double existingAmount, double remainingMonths, double interestRate)
         {
             double rate, months, amount;
@@ -93,7 +101,7 @@ namespace WindowsFormsApp1
             monthlyPayment = (existingAmount) * (interestRate / 1200) / amount;
             return (monthlyPayment);
         }
-
+        //clear button that clears all valuable information inputted
         private void btnClear_Click_1(object sender, EventArgs e)
         {
             txtAmount.Clear();
@@ -110,7 +118,7 @@ namespace WindowsFormsApp1
         {
 
         }
-
+        //restrict input besides values from 0-9, deletes invalid text input
         private void txtMonths_TextChanged(object sender, EventArgs e)
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(txtMonths.Text, "[^0-9]"))
@@ -119,7 +127,7 @@ namespace WindowsFormsApp1
                 txtMonths.Text = txtMonths.Text.Remove(txtMonths.Text.Length - 1);
             }
         }
-
+        //restrict input besides values from 0-9, deletes invalid text input
         private void txtAmount_TextChanged(object sender, EventArgs e)
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(txtAmount.Text, "[^0-9]"))
@@ -128,7 +136,7 @@ namespace WindowsFormsApp1
                 txtAmount.Text = txtAmount.Text.Remove(txtAmount.Text.Length - 1);
             }
         }
-
+        //link to payment options
         private void paymentOptions_Click(object sender, EventArgs e)
         {
             PayOptions pay = new PayOptions(amount, interest);
