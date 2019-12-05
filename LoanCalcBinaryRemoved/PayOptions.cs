@@ -80,7 +80,10 @@ namespace WindowsFormsApp1
             date = monthCalendar1.SelectionRange.Start;
         }
 
-        
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
 
         private void PayOptions_Load(object sender, EventArgs e)
         {
