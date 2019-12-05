@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Mallory Burr, Joe Martinez
+// all database file Mallory Burr
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +20,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-
+        // links to the new loan display 
         private void newLoanButton_Click(object sender, EventArgs e)
         {
             NewLoan nl = new NewLoan();
@@ -32,6 +34,7 @@ namespace WindowsFormsApp1
 
         }
 
+        // links to the existing loan display
         private void existingLoanButton_Click(object sender, EventArgs e)
         {
             ExistingLoan el = new ExistingLoan();

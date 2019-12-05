@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Mallory Burr
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +15,7 @@ namespace WindowsFormsApp1
     {
         public Schedule(string duration, double totalOwed, DateTime date)
         {
-            
+            // parsing to an int 
             int timePeriod = 1 + Int32.Parse(duration) * 12;
             InitializeComponent();
 

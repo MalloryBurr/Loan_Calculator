@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Joe Martinez, Mallory Burr, Asia Dahmas
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,6 +35,7 @@ namespace WindowsFormsApp1
         private double amountOwed;
         private double interest;
 
+        // initilizes variables based on user input
         private void calcButton_Click(object sender, EventArgs e)
         {
 
@@ -60,15 +62,16 @@ namespace WindowsFormsApp1
             double credithours = numberOfCH;
             double costpercredithours = costPerCh;
             loanAmount = credithours * costpercredithours;
+            // calculates the monthly pay rate for the inputted loan
             double rateOfInterest = interest / 1200;
             double numberOfPayments = duration * 12;
             double paymentAmount = (rateOfInterest * loanAmount) / (1 - Math.Pow(1 + rateOfInterest, numberOfPayments * -1));
             return (paymentAmount);
         }
-
+        //call Pay Options and display window
         private void textPaymentOptions_Click(object sender, EventArgs e)
         {
-            //call Pay Options and display window
+            
             PayOptions pay = new PayOptions(amountOwed, interest);
             pay.ShowDialog();
         }
