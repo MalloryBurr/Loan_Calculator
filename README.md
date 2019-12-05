@@ -10,6 +10,8 @@ other features.
 * Install Visual Studio 2017 or higher
 
 <h3> Instructions </h3>
+To Run the program: 
+
 * Download zip file
 * Open the "LoanCalcBinaryRemoved" file
 * Locate LoanCalculator.csproj, open in Visual Studio or double click
