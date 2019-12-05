@@ -1,0 +1,320 @@
+namespace WindowsFormsApp1
+{
+    partial class ExistingLoan
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            this.label1 = new System.Windows.Forms.Label();
+            this.grpExistingLoan = new System.Windows.Forms.GroupBox();
+            this.txtInterestOnly = new System.Windows.Forms.TextBox();
+            this.lblInterestOnly = new System.Windows.Forms.Label();
+            this.lstPayments = new System.Windows.Forms.ListBox();
+            this.paymentOptions = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.txtPrincipal = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Calculate = new System.Windows.Forms.Button();
+            this.txtAmount = new System.Windows.Forms.TextBox();
+            this.lblExisting = new System.Windows.Forms.Label();
+            this.lblInterest = new System.Windows.Forms.Label();
+            this.lblTimePeriod = new System.Windows.Forms.Label();
+            this.lblEstimatedMonthlyPayment = new System.Windows.Forms.Label();
+            this.txtEstimatedPayment = new System.Windows.Forms.TextBox();
+            this.txtInterestRate = new System.Windows.Forms.TextBox();
+            this.txtMonths = new System.Windows.Forms.TextBox();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.grpExistingLoan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(26, 21);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(569, 39);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Enter information for an existing loan";
+            // 
+            // grpExistingLoan
+            // 
+            this.grpExistingLoan.Controls.Add(this.txtInterestOnly);
+            this.grpExistingLoan.Controls.Add(this.lblInterestOnly);
+            this.grpExistingLoan.Controls.Add(this.lstPayments);
+            this.grpExistingLoan.Controls.Add(this.paymentOptions);
+            this.grpExistingLoan.Controls.Add(this.btnClear);
+            this.grpExistingLoan.Controls.Add(this.txtPrincipal);
+            this.grpExistingLoan.Controls.Add(this.label2);
+            this.grpExistingLoan.Controls.Add(this.Calculate);
+            this.grpExistingLoan.Controls.Add(this.txtAmount);
+            this.grpExistingLoan.Controls.Add(this.lblExisting);
+            this.grpExistingLoan.Controls.Add(this.lblInterest);
+            this.grpExistingLoan.Controls.Add(this.lblTimePeriod);
+            this.grpExistingLoan.Controls.Add(this.lblEstimatedMonthlyPayment);
+            this.grpExistingLoan.Controls.Add(this.txtEstimatedPayment);
+            this.grpExistingLoan.Controls.Add(this.txtInterestRate);
+            this.grpExistingLoan.Controls.Add(this.txtMonths);
+            this.grpExistingLoan.Location = new System.Drawing.Point(33, 82);
+            this.grpExistingLoan.Name = "grpExistingLoan";
+            this.grpExistingLoan.Size = new System.Drawing.Size(588, 300);
+            this.grpExistingLoan.TabIndex = 11;
+            this.grpExistingLoan.TabStop = false;
+            this.grpExistingLoan.Text = "Existing Loan Calculator";
+            // 
+            // txtInterestOnly
+            // 
+            this.txtInterestOnly.Location = new System.Drawing.Point(244, 234);
+            this.txtInterestOnly.Name = "txtInterestOnly";
+            this.txtInterestOnly.ReadOnly = true;
+            this.txtInterestOnly.Size = new System.Drawing.Size(100, 22);
+            this.txtInterestOnly.TabIndex = 15;
+            // 
+            // lblInterestOnly
+            // 
+            this.lblInterestOnly.AutoSize = true;
+            this.lblInterestOnly.Location = new System.Drawing.Point(82, 234);
+            this.lblInterestOnly.Name = "lblInterestOnly";
+            this.lblInterestOnly.Size = new System.Drawing.Size(59, 17);
+            this.lblInterestOnly.TabIndex = 14;
+            this.lblInterestOnly.Text = "Interest:";
+            // 
+            // lstPayments
+            // 
+            this.lstPayments.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.lstPayments.FormattingEnabled = true;
+            this.lstPayments.ItemHeight = 16;
+            this.lstPayments.Location = new System.Drawing.Point(350, 37);
+            this.lstPayments.Name = "lstPayments";
+            this.lstPayments.Size = new System.Drawing.Size(232, 180);
+            this.lstPayments.TabIndex = 13;
+            // 
+            // paymentOptions
+            // 
+            this.paymentOptions.Location = new System.Drawing.Point(398, 262);
+            this.paymentOptions.Margin = new System.Windows.Forms.Padding(2);
+            this.paymentOptions.Name = "paymentOptions";
+            this.paymentOptions.Size = new System.Drawing.Size(132, 23);
+            this.paymentOptions.TabIndex = 12;
+            this.paymentOptions.Text = "Payment Options";
+            this.paymentOptions.UseVisualStyleBackColor = true;
+            this.paymentOptions.Click += new System.EventHandler(this.paymentOptions_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(487, 234);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 12;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click_1);
+            // 
+            // txtPrincipal
+            // 
+            this.txtPrincipal.Location = new System.Drawing.Point(244, 195);
+            this.txtPrincipal.Name = "txtPrincipal";
+            this.txtPrincipal.ReadOnly = true;
+            this.txtPrincipal.Size = new System.Drawing.Size(100, 22);
+            this.txtPrincipal.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(50, 195);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(157, 17);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Principal with Interest: $";
+            // 
+            // Calculate
+            // 
+            this.Calculate.Location = new System.Drawing.Point(381, 234);
+            this.Calculate.Name = "Calculate";
+            this.Calculate.Size = new System.Drawing.Size(86, 23);
+            this.Calculate.TabIndex = 9;
+            this.Calculate.Text = "Calculate";
+            this.Calculate.UseVisualStyleBackColor = true;
+            this.Calculate.Click += new System.EventHandler(this.Calculate_Click);
+            // 
+            // txtAmount
+            // 
+            this.txtAmount.Location = new System.Drawing.Point(244, 35);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(100, 22);
+            this.txtAmount.TabIndex = 3;
+            this.txtAmount.TextChanged += new System.EventHandler(this.txtAmount_TextChanged);
+            // 
+            // lblExisting
+            // 
+            this.lblExisting.AutoSize = true;
+            this.lblExisting.Location = new System.Drawing.Point(33, 35);
+            this.lblExisting.Name = "lblExisting";
+            this.lblExisting.Size = new System.Drawing.Size(182, 17);
+            this.lblExisting.TabIndex = 1;
+            this.lblExisting.Text = "Enter Existing Loan Amount";
+            // 
+            // lblInterest
+            // 
+            this.lblInterest.AutoSize = true;
+            this.lblInterest.Location = new System.Drawing.Point(69, 74);
+            this.lblInterest.Name = "lblInterest";
+            this.lblInterest.Size = new System.Drawing.Size(109, 17);
+            this.lblInterest.TabIndex = 2;
+            this.lblInterest.Text = "Interest Rate: %";
+            // 
+            // lblTimePeriod
+            // 
+            this.lblTimePeriod.AutoSize = true;
+            this.lblTimePeriod.Location = new System.Drawing.Point(49, 114);
+            this.lblTimePeriod.Name = "lblTimePeriod";
+            this.lblTimePeriod.Size = new System.Drawing.Size(124, 17);
+            this.lblTimePeriod.TabIndex = 5;
+            this.lblTimePeriod.Text = "Months remaining:";
+            this.lblTimePeriod.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblEstimatedMonthlyPayment
+            // 
+            this.lblEstimatedMonthlyPayment.AutoSize = true;
+            this.lblEstimatedMonthlyPayment.Location = new System.Drawing.Point(19, 154);
+            this.lblEstimatedMonthlyPayment.Name = "lblEstimatedMonthlyPayment";
+            this.lblEstimatedMonthlyPayment.Size = new System.Drawing.Size(213, 17);
+            this.lblEstimatedMonthlyPayment.TabIndex = 6;
+            this.lblEstimatedMonthlyPayment.Text = "Estimated Payment per Month: $";
+            // 
+            // txtEstimatedPayment
+            // 
+            this.txtEstimatedPayment.Location = new System.Drawing.Point(244, 154);
+            this.txtEstimatedPayment.Name = "txtEstimatedPayment";
+            this.txtEstimatedPayment.ReadOnly = true;
+            this.txtEstimatedPayment.Size = new System.Drawing.Size(100, 22);
+            this.txtEstimatedPayment.TabIndex = 8;
+            // 
+            // txtInterestRate
+            // 
+            this.txtInterestRate.Location = new System.Drawing.Point(244, 74);
+            this.txtInterestRate.Name = "txtInterestRate";
+            this.txtInterestRate.Size = new System.Drawing.Size(100, 22);
+            this.txtInterestRate.TabIndex = 4;
+            // 
+            // txtMonths
+            // 
+            this.txtMonths.Location = new System.Drawing.Point(244, 114);
+            this.txtMonths.Name = "txtMonths";
+            this.txtMonths.Size = new System.Drawing.Size(100, 22);
+            this.txtMonths.TabIndex = 7;
+            this.txtMonths.TextChanged += new System.EventHandler(this.txtMonths_TextChanged);
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(641, 67);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Undergraduate Subsidized & Unsubsidized";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Graduate Subsidized & Unsubsidized";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Parent Plus";
+            series4.ChartArea = "ChartArea1";
+            series4.Color = System.Drawing.Color.GreenYellow;
+            series4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series4.IsValueShownAsLabel = true;
+            series4.Label = "#VAL{N2}%";
+            series4.Legend = "Legend1";
+            series4.Name = "Yours";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Series.Add(series3);
+            this.chart1.Series.Add(series4);
+            this.chart1.Size = new System.Drawing.Size(616, 315);
+            this.chart1.TabIndex = 12;
+            this.chart1.Text = "chart1";
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "Federal Student Loan Percentages";
+            this.chart1.Titles.Add(title1);
+            this.chart1.Click += new System.EventHandler(this.chart1_Click);
+            // 
+            // ExistingLoan
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1306, 444);
+            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.grpExistingLoan);
+            this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "ExistingLoan";
+            this.Text = "Existing Loan";
+            this.Load += new System.EventHandler(this.ExistingLoan_Load);
+            this.grpExistingLoan.ResumeLayout(false);
+            this.grpExistingLoan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox grpExistingLoan;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.TextBox txtPrincipal;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button Calculate;
+        private System.Windows.Forms.TextBox txtAmount;
+        private System.Windows.Forms.Label lblExisting;
+        private System.Windows.Forms.Label lblInterest;
+        private System.Windows.Forms.Label lblTimePeriod;
+        private System.Windows.Forms.Label lblEstimatedMonthlyPayment;
+        private System.Windows.Forms.TextBox txtEstimatedPayment;
+        private System.Windows.Forms.TextBox txtInterestRate;
+        private System.Windows.Forms.TextBox txtMonths;
+        private System.Windows.Forms.Button paymentOptions;
+        private System.Windows.Forms.ListBox lstPayments;
+        private System.Windows.Forms.TextBox txtInterestOnly;
+        private System.Windows.Forms.Label lblInterestOnly;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+    }
+}
