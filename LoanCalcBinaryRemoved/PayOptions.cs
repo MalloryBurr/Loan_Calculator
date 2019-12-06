@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("MyProjectTests")]
 namespace WindowsFormsApp1
 {
     public partial class PayOptions : Form
@@ -75,17 +76,17 @@ namespace WindowsFormsApp1
         }
 
         //create variable for date to save the selected date on the calendar
-        private void monthCalendar1_DateChanged_1(object sender, DateRangeEventArgs e)
+        public void monthCalendar1_DateChanged_1(object sender, DateRangeEventArgs e)
         {
             date = monthCalendar1.SelectionRange.Start;
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
+        public void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }
 
-        private void PayOptions_Load(object sender, EventArgs e)
+        public void PayOptions_Load(object sender, EventArgs e)
         {
             this.universityInfoTableAdapter.Fill(this.loanCalcDatabaseDataSet.UniversityInfo);
 
@@ -96,7 +97,7 @@ namespace WindowsFormsApp1
             durationCB.Items.Add("20");
         }
 
-        private void durationCB_SelectedIndexChanged(object sender, EventArgs e)
+        public void durationCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             //create switch to route logic based on duration selected
             switch (durationCB.SelectedItem.ToString())
@@ -116,7 +117,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void scheduleButton_Click_1(object sender, EventArgs e)
+        public void scheduleButton_Click_1(object sender, EventArgs e)
         {
             //call schedule method to display calendar of payments
             selectedTime = durationCB.SelectedItem.ToString();

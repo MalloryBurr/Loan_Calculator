@@ -281,7 +281,6 @@ C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBina
 C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBinaryRemoved\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBinaryRemoved\bin\Debug\Renci.SshNet.dll
 C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBinaryRemoved\bin\Debug\MySql.Data.xml
-C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBinaryRemoved\obj\Debug\LoanCalculator.csprojAssemblyReference.cache
 C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBinaryRemoved\obj\Debug\WindowsFormsApp1.ExistingLoan.resources
 C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBinaryRemoved\obj\Debug\WindowsFormsApp1.MainForm.resources
 C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBinaryRemoved\obj\Debug\WindowsFormsApp1.NewLoan.resources
@@ -293,3 +292,17 @@ C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBina
 C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBinaryRemoved\obj\Debug\LoanCalculator.csproj.CopyComplete
 C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBinaryRemoved\obj\Debug\WindowsFormsApp1.exe
 C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBinaryRemoved\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBinaryRemoved\bin\Debug\xunit.assert.dll
+C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBinaryRemoved\bin\Debug\xunit.assert.xml
+C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBinaryRemoved\bin\Debug\xunit.abstractions.dll
+C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBinaryRemoved\bin\Debug\xunit.runner.visualstudio.testadapter.dll
+C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBinaryRemoved\bin\Debug\xunit.runner.reporters.net452.dll
+C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBinaryRemoved\bin\Debug\xunit.runner.utility.net452.dll
+C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBinaryRemoved\bin\Debug\Assert.dll
+C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBinaryRemoved\bin\Debug\xunit.core.dll
+C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBinaryRemoved\bin\Debug\xunit.execution.desktop.dll
+C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBinaryRemoved\bin\Debug\Assert.pdb
+C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBinaryRemoved\bin\Debug\Assert.xml
+C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBinaryRemoved\bin\Debug\xunit.core.xml
+C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBinaryRemoved\bin\Debug\xunit.execution.desktop.xml
+C:\Users\Mallory\Documents\fall19\4110-SE-Lecture\CalculatorProject\LoanCalcBinaryRemoved\obj\Debug\LoanCalculator.csprojAssemblyReference.cache

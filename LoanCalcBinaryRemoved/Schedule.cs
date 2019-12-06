@@ -5,39 +5,53 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+[assembly: InternalsVisibleTo("UnitTests")]
 namespace WindowsFormsApp1
 {
     public partial class Schedule : Form
     {
+        public static int setDuration(string durationStr)
+        {
+            int timePeriod = 1 + Int32.Parse(durationStr) * 12;
+            return timePeriod;
+        }
+
+        public static double roundTotal(double totalOwed)
+        {
+            totalOwed = Math.Round(totalOwed, 2);
+            return totalOwed;
+        }
+
         public Schedule(string duration, double totalOwed, DateTime date)
         {
+            setDuration(duration);
+            
             // parsing to an int 
-            int timePeriod = 1 + Int32.Parse(duration) * 12;
             InitializeComponent();
 
 
             ScheduleDataSetTableAdapters.ScheduleTableAdapter scheduleTableAdapter = new ScheduleDataSetTableAdapters.ScheduleTableAdapter();
 
-            double monthlyPayment = Math.Round((totalOwed / timePeriod), 2);
-            totalOwed = Math.Round(totalOwed, 2);
+            double monthlyPayment = Math.Round((totalOwed / setDuration(duration)), 2);
+            roundTotal(totalOwed);
 
 
-            for (int i = 0; i <= timePeriod; ++i)
+            for (int i = 0; i <= setDuration(duration); ++i)
             {
                 // date, payment, amount remaining
                 scheduleTableAdapter.Insert(date.ToShortDateString(), monthlyPayment, totalOwed);
                 totalOwed = Math.Round((totalOwed - monthlyPayment), 2);
                 date = date.AddMonths(1);
             }
-            
-            
         }
 
-        private void Schedule_Load(object sender, EventArgs e)
+
+        public void Schedule_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'scheduleDataSet.Schedule' table. You can move, or remove it, as needed.
             this.scheduleTableAdapter.Fill(this.scheduleDataSet.Schedule);            
