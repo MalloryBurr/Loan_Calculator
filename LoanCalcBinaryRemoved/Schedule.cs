@@ -54,7 +54,7 @@ namespace WindowsFormsApp1
             double monthlyPayment = Math.Round((totalOwed / setDuration(duration)), 2);
             roundTotal(totalOwed);
 
-
+            
             for (int i = 0; i <= setDuration(duration); ++i)
             {
                 // date, payment, amount remaining
