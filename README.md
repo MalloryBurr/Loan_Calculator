@@ -1,27 +1,14 @@
-# Loan_Calculator
-
-4111 project for team 2
+# Unit Testing Assignment- Burr
 
 <h2> Purpose </h2>
-The Loan Calculator allows the user to input new or existing loan info and calculate payments based on different time durations, as well as 
-other features.
+The Loan Calculator allows the user to input new or existing loan info and calculate payments based on different time durations, as well as other features. This branch serves to show my unit tests.
 
-<h3>Dependencies</h3>
-* Install Visual Studio 2017 or higher
+<h3> Testing Information </h3>
 
-<h3> Instructions </h3>
-To Run the program: 
+I used MSTestV2 to provide my unit testing framework. I tested two functions within Schedule.cs: setDuration and roundTotal. 
+To test setDuration, I passed a value of "1" as a string into setDuration, set an expected value of 13, and compared the return value of the function with what was expected via an Assert.Equals. 
 
-* Download zip file
-* Open the "LoanCalcBinaryRemoved" file
-* Locate LoanCalculator.csproj, open in Visual Studio or double click
-* Run program via the Start button on the top of the IDE
 
-*Windows 10 is only supported OS. Other operating systems may work, but they have not been tested.*
+To test roundTotal, I passed a value of 1.3333 into roundTotal, set an expected value of 1.33, and compared the return value of the function with what was expected via an Assert.Equals.
 
-<h3> Contributors </h3>
-
-* Mallory Burr
-* Joseph Martinez
-* Jozef Nicaj
-* Asia Dahmas
+The tests passed, which means the functions validated input as expected. 
