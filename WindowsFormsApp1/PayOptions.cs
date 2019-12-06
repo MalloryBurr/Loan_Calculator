@@ -71,6 +71,7 @@ namespace WindowsFormsApp1
             amount = 1 / amount;
             amount = 1 - amount;
             monthlyPayment = (paymentAmount) * (interestRate / 1200) / amount;
+            monthlyPayment = Math.Round(monthlyPayment, 2);
             return (monthlyPayment);
         }
 
