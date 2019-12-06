@@ -15,23 +15,37 @@ namespace WindowsFormsApp1
 {
     public partial class Schedule : Form
     {
+        // *********************************************************
+        // In this branch, and specifically in this file, I will 
+        // describe how I applied the Singleton Design Pattern.
+        // *********************************************************
+
+        // This static method validated input and also is covered by a unit test
+        // The return in this function helps ensure that only one instance runs,
+        // per the design pattern's rules
         public static int setDuration(string durationStr)
         {
             int timePeriod = 1 + Int32.Parse(durationStr) * 12;
             return timePeriod;
         }
 
+        // This static method validated input and also is covered by a unit test
+        // The return in this function helps ensure that only one instance runs,
+        // per the design pattern's rules
         public static double roundTotal(double totalOwed)
         {
             totalOwed = Math.Round(totalOwed, 2);
             return totalOwed;
         }
 
+        // Schedule takes in informtion from the class above it, also in-line with 
+        // the Singleton Design Pattern, which emphasizes this progression of information
+        // in a single-instance implementation
         public Schedule(string duration, double totalOwed, DateTime date)
         {
+            //call setDuration to calculate a value
             setDuration(duration);
             
-            // parsing to an int 
             InitializeComponent();
 
 
