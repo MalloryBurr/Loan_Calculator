@@ -17,25 +17,38 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
+        //inherits total_payment and interest_rate from newloan or existing loan
         public PayOptions(double total_Payment, double interest_Rate)
         {
-            
             InitializeComponent();
             displayPaymentOptions(total_Payment, interest_Rate);
         }
+
+        //define global variables to allow passing to other functions
+        double totalOwed;
+        double fiveYear, tenYear, fifteenYear, twentyYear;
+        DateTime date;
+        private string selectedTime;
+
+
         //displays a list of payment time schedules
-        private void displayPaymentOptions(double payment, double i_rate)
+        public void displayPaymentOptions(double payment, double i_rate)
         {
-            double totalOwed = payment;
+            totalOwed = payment;
             double interest = i_rate;
             string totalBeforePayment = totalOwed.ToString("f2");
             txtTotalAmountOwed.Text = totalBeforePayment;
             txtInterestRate.Text = interest.ToString();
+           
+            fiveYear = (principalWithInterest(monthlyPayment(payment, 60, interest), 60));
+            tenYear = (principalWithInterest(monthlyPayment(payment, 120, interest), 120));
+            fifteenYear = (principalWithInterest(monthlyPayment(payment, 180, interest), 180));
+            twentyYear = (principalWithInterest(monthlyPayment(payment, 240, interest), 240));
 
-            txtFiveYear.Text = (principalWithInterest(monthlyPayment(payment, 70, interest), 70)).ToString("f2");
-            txtTenYear.Text = (principalWithInterest(monthlyPayment(payment, 120, interest), 120)).ToString("f2");
-            txtFifteenYear.Text = (principalWithInterest(monthlyPayment(payment, 180, interest), 180)).ToString("f2");
-            txtTwentyYear.Text = (principalWithInterest(monthlyPayment(payment, 240, interest), 240)).ToString("f2");
+            txtFiveYear.Text = fiveYear.ToString("f2");
+            txtTenYear.Text = tenYear.ToString("f2");
+            txtFifteenYear.Text = fifteenYear.ToString("f2");
+            txtTwentyYear.Text = twentyYear.ToString("f2");
         }
 
         //calculates the total amount payed with interest after a certain amount of time
@@ -60,9 +73,51 @@ namespace WindowsFormsApp1
             return (monthlyPayment);
         }
 
+        //create variable for date to save the selected date on the calendar
+        private void monthCalendar1_DateChanged_1(object sender, DateRangeEventArgs e)
+        {
+            date = monthCalendar1.SelectionRange.Start;
+        }
+
+        
+
         private void PayOptions_Load(object sender, EventArgs e)
         {
+            this.universityInfoTableAdapter.Fill(this.loanCalcDatabaseDataSet.UniversityInfo);
 
+            //insert values into duration combobox
+            durationCB.Items.Add("5");
+            durationCB.Items.Add("10");
+            durationCB.Items.Add("15");
+            durationCB.Items.Add("20");
+        }
+
+        private void durationCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //create switch to route logic based on duration selected
+            switch (durationCB.SelectedItem.ToString())
+            {
+                case "5":
+                    totalOwed = fiveYear;
+                    break;
+                case "10":
+                    totalOwed = tenYear;
+                    break;
+                case "15":
+                    totalOwed = fifteenYear;
+                    break;
+                case "20":
+                    totalOwed = twentyYear;
+                    break;
+            }
+        }
+
+        private void scheduleButton_Click_1(object sender, EventArgs e)
+        {
+            //call schedule method to display calendar of payments
+            selectedTime = durationCB.SelectedItem.ToString();
+            Schedule sc = new Schedule(selectedTime, totalOwed, date);
+            sc.ShowDialog();
         }
     }
 }

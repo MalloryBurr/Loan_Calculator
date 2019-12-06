@@ -1,0 +1,2 @@
+C:\Users\z\Downloads\Loan_Calculator-demo (1)\Loan_Calculator-demo\LoanCalc\ClassLibrary1\obj\Debug\ClassLibrary1.csprojAssemblyReference.cache
+C:\Users\z\Downloads\Loan_Calculator-demo (1)\Loan_Calculator-demo\LoanCalc\ClassLibrary1\obj\Debug\ClassLibrary1.csproj.CoreCompileInputs.cache
