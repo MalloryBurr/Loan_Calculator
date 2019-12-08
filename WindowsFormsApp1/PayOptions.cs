@@ -13,10 +13,35 @@ namespace WindowsFormsApp1
 {
     public partial class PayOptions : Form
     {
-        public PayOptions()
+        // ADDED FOR DESIGN PATTERN ASSIGNMENT lines 17-38
+        private static PayOptions instance = null;
+        private static readonly object threadLock = new object();
+
+        private PayOptions()
         {
             InitializeComponent();
         }
+
+        public static PayOptions getInstance
+        {
+            get
+            {
+                lock (threadLock)
+                {
+                    if(instance == null)
+                    {
+                        instance = new PayOptions();
+                    }
+                    return instance;
+                }
+            }
+        }
+
+        // COMMENTED OUT FOR SINGLETON PATTERN ASSIGNMENT
+        //public PayOptions()
+        //{
+        //    InitializeComponent();
+        //}
 
         //inherits total_payment and interest_rate from newloan or existing loan
         public PayOptions(double total_Payment, double interest_Rate)
@@ -85,7 +110,7 @@ namespace WindowsFormsApp1
 
         private void PayOptions_Load(object sender, EventArgs e)
         {
-            this.universityInfoTableAdapter.Fill(this.loanCalcDatabaseDataSet.UniversityInfo);
+            //this.universityInfoTableAdapter.Fill(this.loanCalcDatabaseDataSet.UniversityInfo);
 
             //insert values into duration combobox
             durationCB.Items.Add("5");
