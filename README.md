@@ -21,7 +21,7 @@ To Run the program:
 
 <h3> Contributors </h3>
 
-* Mallory Burr
+* Mallory Burr (Team Lead)
 * Joseph Martinez
 * Jozef Nicaj
 * Asia Dahmas
